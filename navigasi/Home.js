@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         padding:6
     },
-    teks: { fontSize:16 }
+    teks: { fontSize:16, color:"black" }
 });
 
 export default Home;

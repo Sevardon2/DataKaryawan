@@ -12,13 +12,13 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home}
-        option={{
+        options={{
           title: "Data Karyawan",
           headerStyle: { backgroundColor:'#006aff' },
           headerTintColor: '#fff'
         }}/>
         <Stack.Screen name="Detail" component={Detail}
-        option={{
+        options={{
           title: 'Detail Karyawan',
           headerStyle: { backgroundColor:'#006aff' },
           headerTintColor: '#fff'

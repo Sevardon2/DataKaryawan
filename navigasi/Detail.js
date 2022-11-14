@@ -2,8 +2,9 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Button, Image, Linking } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Title, Card } from 'react-native-paper';
-import { MaterialIcons, Entypo } from 'react-native-vector-icons';
-// import karyawan from "../Karyawan";
+import email from '../icon/email.png';
+import call from '../icon/call.png';
+import dollar from '../icon/dollar.png';
 
 const Detail = ({navigation, route}) => {
     const {karyawan} = route.params
@@ -17,27 +18,27 @@ const Detail = ({navigation, route}) => {
 
             <View style={{alignItems:"center", margin:15}}>
                 <Title>{karyawan.nama}</Title>
-                <Text style={{fontSize:14}}>{karyawan.jabatan}</Text>
+                <Text style={{fontSize:14, color:"gray"}}>{karyawan.jabatan}</Text>
             </View>
             <Card style={{margin:3}}
-            onPress={()=>{Linking.openURL('mailto:${karyawan.email}')}}>
+            onPress={()=>{Linking.openURL(`mailto:${karyawan.email}?subject`)}}>
                 <View style={{flexDirection:"row", padding:8}}>
-                    {/* <MaterialIcons name="fitness-center" size={32} color="#006aff"/> */}
+                    <Image source={email} style={{ width:30, height:30 }}/>
                     <Text style={styles.teks}>{karyawan.email}</Text>
                 </View>
             </Card>
 
             <Card style={{margin:3}}
-            onPress={()=>{Linking.openURL('tel:${karyawan.telp}')}}>
+            onPress={()=>{Linking.openURL(`tel:${karyawan.telp}`)}}>
                 <View style={{flexDirection:'row', padding:8}}>
-                    {/* <Entypo name="phone" size={32} color="#006aff"/> */}
+                    <Image source={call} style={{ width:30, height:30 }}/>
                     <Text style={styles.teks}>{karyawan.telp}</Text>
                 </View>
             </Card>
 
             <Card style={{margin:3}}>
                 <View style={{flexDirection:'row', padding:8}}>
-                    {/* <MaterialIcons name="attach-money" size={32} color="#006aff"/> */}
+                    <Image source={dollar} style={{ width:30, height:30 }}/>
                     <Text style={styles.teks}>{karyawan.gaji}</Text>
                 </View>
             </Card>
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
     teks:{
         fontSize:15,
         marginTop:3,
-        marginLeft:5
+        marginLeft:5,
+        color: "black"
     }
 });
 
